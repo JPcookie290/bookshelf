@@ -1,6 +1,6 @@
 "use strict";
 
-const bookshelf = document.querySelector('#bookshelf')
+
 const addBtn = document.querySelector('#add-button')
 const form = document.querySelector('#form')
 const cancel = document.querySelector('#cancel')
@@ -11,7 +11,7 @@ let showForm = false;
 
 let books = [];
 
-function Book(title, author, pages) {
+function book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = "Pages: " + pages;
@@ -19,12 +19,30 @@ function Book(title, author, pages) {
 }
 
 function addBooks(title, author, pages) {
-    let newBook = new Book(title, author, pages);
+    let bookshelf = document.querySelector('#bookshelf')
+    let newBook = new book(title, author, pages);
     books.push(newBook);
-    //addToShelf(newBook);
     console.log(books);
-    showForm = false;
-    form.classList.add("hidden")
+    /*  
+    books.forEach(newBook => {
+        let bookAdd = document.createElement('div');
+            bookAdd.innerHTML = `
+            <div class="book" id="book">
+                <h3 class="ue">${newBook.title}</h3>
+                <p class="tx">${newBook.author}</p>
+                <p class="tx">${newBook.pages}</p>
+                <span>
+                    <i class="fa-solid fa-book-open"></i>
+                    <i class="fa-solid fa-square-minus"></i>
+                </span>
+            </div>`;
+            bookshelf.appendChild(newBook);
+        });
+    if (showForm === true) {
+        showForm = false;
+        form.classList.add("hidden"); 
+    }
+    */
 };
 
 function getData() {
@@ -35,7 +53,8 @@ function getData() {
     let pages = document.querySelector('#pages');
     pages = pages.value;
     checkInput(title, author, pages);
-};
+}
+
 function checkInput(title, author, pages) {
     if (title === "" || author == "" || pages == "") {
         check.textContent = "Required input is missing or wrong!"
@@ -49,26 +68,6 @@ function clear() {
     author.value = "";
     pages.value = "";
     check.textContent = "";
-}
-
-function addToShelf(book) {
-    let bookAdd = document.createElement('div');
-    bookAdd.classList.add("book");
-
-    let bookTitle = document.createElement('h3');
-    bookTitle.classList.add("ue");
-    bookTitle.textContent = book.title;
-    console.log(book.title);
-
-    let bookAuthor = document.createElement('p');
-    bookAuthor.classList.add("tx");
-    bookAuthor.textContent = book.author;
-    console.log(book.author);
-
-    let bookPages = document.createElement('p');
-    bookPages.classList.add("tx");
-    bookPages.textContent = book.pages;
-    console.log(book.pages);
 }
 
 /*  Buttons */
