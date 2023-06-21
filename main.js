@@ -36,7 +36,7 @@ function addBooks(title, author, pages) {
                     <i class="fa-solid fa-square-minus"></i>
                 </span>
             </div>`;
-            bookshelf.appendChild(newBook);
+
         });
     if (showForm === true) {
         showForm = false;
