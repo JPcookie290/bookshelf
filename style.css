@@ -57,6 +57,7 @@ header h1 {
 }
 
 .form {
+  z-index: 99;
   width: 50%;
   height: 380px;
   margin: auto;
@@ -68,6 +69,10 @@ header h1 {
   -moz-box-shadow: 0px 0px 6px 5px rgba(7, 79, 87, 0.75);
   border: none;
   border-radius: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .form h2 {
   font-size: 30pt;
@@ -137,20 +142,26 @@ header h1 {
   border-radius: 15px;
   background-color: #89023e;
   color: white;
-  width: 20%;
-  height: 100%;
+  margin: 15px;
+  padding: 5px;
+  float: left;
 }
-.book .ue {
+.book h3 {
   padding: 3px;
   font-family: "Indie Flower", cursive;
 }
-.book .tx {
+.book p {
   font-family: "Indie Flower", cursive;
 }
-.book .gelesen {
-  font-family: "Indie Flower", cursive;
+.book span {
+  color: #500225;
 }
-.book .symbole {
-  float: right;
-  font-size: 15pt;
+.book span:hover {
+  cursor: pointer;
+}
+.book span .deleteBook:hover {
+  color: white;
+}
+.book span .readCheck {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

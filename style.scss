@@ -59,7 +59,7 @@ header {
 }
 
 .form {
-
+    z-index: 99;
     width: 50%;
     height: 380px;
     margin: auto;
@@ -71,6 +71,10 @@ header {
     -moz-box-shadow: 0px 0px 6px 5px rgba(7, 79, 87, 0.75);
     border: none;
     border-radius: 25px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     h2 {
         font-size: 30pt;
@@ -112,9 +116,11 @@ header {
         width: 90%;
         margin-left: auto;
         margin-right: auto;
+
         .warning {
             float: left;
         }
+
         input {
             color: #074f57;
             background-color: rgba(124, 187, 195, 0.75);
@@ -136,29 +142,41 @@ header {
     }
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.book{
+.book {
     border: none;
     border-radius: 15px;
     background-color: #89023e;
     color: white;
-    width: 20%;
-    height: 100%;
-    .ue{
+    margin: 15px;
+    padding: 5px;
+    float: left;
+
+    h3 {
         padding: 3px;
         font-family: 'Indie Flower', cursive;
     }
-    .tx{
+
+    p {
         font-family: 'Indie Flower', cursive;
     }
-    .gelesen{
-        font-family: 'Indie Flower', cursive;
+
+    span {
+        color: #500225;
+        &:hover {
+            cursor: pointer;
+        }
+        .deleteBook {
+            &:hover {
+                color: white;
+            }
+        }
+        .readCheck{
+            color: white;
+        }
     }
-    .symbole{
-        float: right;
-        font-size: 15pt;
-    }
+
 }

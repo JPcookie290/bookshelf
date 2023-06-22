@@ -1,49 +1,62 @@
 "use strict";
 
-
 const addBtn = document.querySelector('#add-button')
 const form = document.querySelector('#form')
 const cancel = document.querySelector('#cancel')
 const addBook = document.querySelector('#add')
+
+const bookshelf = document.querySelector('.container')
+const titleBs = document.querySelector('.title')
+const authorBs = document.querySelector('.author')
+const pagesBs = document.querySelector('.pages')
+const bookRead = document.querySelector('.bookRead')
+const deleteBook = document.querySelector('.deleteBook')
+
 let check = document.querySelector('#warning')
 
 let showForm = false;
+let bookMarked = false;
 
 let books = [];
 
-function book(title, author, pages) {
+function Book(title, author, pages) {
     this.title = title;
     this.author = author;
     this.pages = "Pages: " + pages;
-    this.read = "";
+    this.read = false;
 }
 
 function addBooks(title, author, pages) {
-    let bookshelf = document.querySelector('#bookshelf')
-    let newBook = new book(title, author, pages);
+
+    let newBook = new Book(title, author, pages);
     books.push(newBook);
     console.log(books);
-    /*  
-    books.forEach(newBook => {
-        let bookAdd = document.createElement('div');
-            bookAdd.innerHTML = `
-            <div class="book" id="book">
-                <h3 class="ue">${newBook.title}</h3>
-                <p class="tx">${newBook.author}</p>
-                <p class="tx">${newBook.pages}</p>
-                <span>
-                    <i class="fa-solid fa-book-open"></i>
-                    <i class="fa-solid fa-square-minus"></i>
-                </span>
-            </div>`;
+    
+    addToShelf(newBook);
 
-        });
+    /*  */
     if (showForm === true) {
         showForm = false;
         form.classList.add("hidden"); 
     }
-    */
+    
 };
+
+function addToShelf(newBook) {
+    let bookAdd = document.createElement('div');
+    bookAdd.innerHTML = `
+            <div class="book" id="book">
+                <h3 class="title">${newBook.title}</h3>
+                <p class="author">${newBook.author}</p>
+                <p class="pages">${newBook.pages}</p>
+                <span>
+                    <div class="bookRead readCheck"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="deleteBook"><i class="fa-solid fa-square-minus"></i></div>
+                </span>
+            </div>`;
+    bookshelf.appendChild(bookAdd);
+};
+
 
 function getData() {
     let title = document.querySelector('#title');
