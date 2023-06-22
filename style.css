@@ -143,7 +143,10 @@ header h1 {
   background-color: #89023e;
   color: white;
   margin: 15px;
-  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   float: left;
 }
 .book h3 {
@@ -154,14 +157,22 @@ header h1 {
   font-family: "Indie Flower", cursive;
 }
 .book span {
+  display: flex;
+  float: right;
   color: #500225;
 }
 .book span:hover {
   cursor: pointer;
 }
+.book span .deleteBook {
+  margin-right: 0;
+  margin-left: 5px;
+}
 .book span .deleteBook:hover {
   color: white;
 }
 .book span .readCheck {
+  margin-right: 5px;
+  margin-left: 0;
   color: white;
 }/*# sourceMappingURL=style.css.map */

@@ -152,7 +152,10 @@ header {
     background-color: #89023e;
     color: white;
     margin: 15px;
-    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     float: left;
 
     h3 {
@@ -165,16 +168,22 @@ header {
     }
 
     span {
+        display: flex;
+        float: right;
         color: #500225;
         &:hover {
             cursor: pointer;
         }
         .deleteBook {
+            margin-right: 0;
+            margin-left: 5px;
             &:hover {
                 color: white;
             }
         }
         .readCheck{
+            margin-right: 5px;
+            margin-left: 0;
             color: white;
         }
     }

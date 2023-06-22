@@ -19,16 +19,16 @@ let bookMarked = false;
 
 let books = [];
 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = "Pages: " + pages;
-    this.read = false;
+    this.read = read;
 }
 
-function addBooks(title, author, pages) {
+function addBooks(title, author, pages, read) {
 
-    let newBook = new Book(title, author, pages);
+    let newBook = new Book(title, author, pages, read);
     books.push(newBook);
     console.log(books);
     
@@ -50,7 +50,7 @@ function addToShelf(newBook) {
                 <p class="author">${newBook.author}</p>
                 <p class="pages">${newBook.pages}</p>
                 <span>
-                    <div class="bookRead readCheck"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="bookRead"><i class="fa-solid fa-book-open"></i></div>
                     <div class="deleteBook"><i class="fa-solid fa-square-minus"></i></div>
                 </span>
             </div>`;
@@ -82,6 +82,14 @@ function clear() {
     pages.value = "";
     check.textContent = "";
 }
+
+bookshelf.addEventListener('click', (e) => {
+    let currentTraget = e.target;
+    //console.log(currentTraget);
+    if (currentTraget.classList.contains('.bookRead')) {
+        console.log(currentTraget);
+    }
+})
 
 /*  Buttons */
 
