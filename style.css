@@ -171,8 +171,10 @@ header h1 {
 .book span .deleteBook:hover {
   color: white;
 }
-.book span .readCheck {
+.book span .bookRead {
   margin-right: 5px;
   margin-left: 0;
+}
+.book span .readCheck {
   color: white;
 }/*# sourceMappingURL=style.css.map */
