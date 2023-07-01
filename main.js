@@ -101,8 +101,6 @@ bookshelf.addEventListener('click', (e) => {
     }
 })
 
-
-
 addBtn.addEventListener('click', () => {
     //console.log(showForm);
     if (showForm === false) {
